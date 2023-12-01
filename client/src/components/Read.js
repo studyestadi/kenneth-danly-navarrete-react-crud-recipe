@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import SpecialCards from "./SpecialCards";
 
 function Read() {
   const [result, setResult] = useState([]);
@@ -24,6 +25,10 @@ function Read() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const getSpecial = (ingredientId) => {
+    return special.find((special) => special.ingredientId == ingredientId);
+  };
 
   return (
     <div className="d-flex w-100 justify-content-center align-items-center bg-light">
@@ -100,6 +105,7 @@ function Read() {
                         </li>
                       )}
                     </ul>
+                    <SpecialCards special={getSpecial(item.uuid)} />
                   </div>
                 );
               })}
@@ -126,11 +132,6 @@ function Read() {
             <FontAwesomeIcon icon={faPenToSquare} />
             <span className="mL1R">Edit</span>
           </Link>
-
-          {/* <button className="btn btn-primary ms-3">
-            <FontAwesomeIcon icon={faCheck} />
-            <span className="mL1R">Confirm</span>
-          </button> */}
         </div>
       </div>
     </div>
