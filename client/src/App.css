@@ -1,0 +1,26 @@
+.mR1R {
+  margin-right: 1rem;
+}
+.mL1R {
+  margin-left: .3rem;
+}
+.pL1R {
+  margin-left: 1rem;
+}
+.mYP3R {
+  margin: .3rem 0rem;
+}
+.mY1R {
+  margin: 1rem 0rem;
+}
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.tDN {
+  text-decoration: none;
+}
